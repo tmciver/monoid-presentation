@@ -1,0 +1,9 @@
+#+TITLE: An Introduction to Monoids
+#+OPTIONS: toc:1, num:nil, timestamp:nil
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js@3.8.0
+#+REVEAL_THEME: moon
+
+* Outline
+* Examples
+* Abstraction
+* Conclusion
