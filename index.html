@@ -32,33 +32,64 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#/slide-org0e07007">Outline</a></li>
-<li><a href="#/slide-org7149994">Examples</a></li>
-<li><a href="#/slide-org5f691a1">Abstraction</a></li>
-<li><a href="#/slide-org06c98b1">Conclusion</a></li>
+<li><a href="#/slide-org3493ac9">Outline</a></li>
+<li><a href="#/slide-org8acf540">Examples</a></li>
+<li><a href="#/slide-org8138a2d">Abstraction</a></li>
+<li><a href="#/slide-org1dc7b2b">Conclusion</a></li>
 </ul>
 </div>
 </div>
 </section>
 
 <section>
-<section id="slide-org0e07007">
-<h2 id="org0e07007">Outline</h2>
+<section id="slide-org3493ac9">
+<h2 id="org3493ac9">Outline</h2>
 </section>
 </section>
 <section>
-<section id="slide-org7149994">
-<h2 id="org7149994">Examples</h2>
+<section id="slide-org8acf540">
+<h2 id="org8acf540">Examples</h2>
+<div class="outline-text-2" id="text-org8acf540">
+</div>
+</section>
+<section id="slide-org1eaec31">
+<h3 id="org1eaec31">Total Weight</h3>
+<p>
+Let's say I have a bunch of packages that need to be shipped.
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-python"><code trim><span style="color: #fcaf3e;">packages</span> = [{<span style="color: #e9b96e;">'destination'</span>: <span style="color: #e9b96e;">'968 East Summit Court New Lenox, IL 60451'</span>,
+             <span style="color: #e9b96e;">'weight'</span>: 11},
+            {<span style="color: #e9b96e;">'destination'</span>: <span style="color: #e9b96e;">'75 South George Street Muskegon, MI 49441'</span>,
+             <span style="color: #e9b96e;">'weight'</span>: 5},
+            {<span style="color: #e9b96e;">'destination'</span>: <span style="color: #e9b96e;">'238 N. Holly Ave. Tampa, FL 33604'</span>,
+             <span style="color: #e9b96e;">'weight'</span>: 4}]
+</code></pre>
+</div>
+
+<p class="fragment (appear)">
+In order to ship I need to calculate their total weight.
+</p>
+
+<div class="org-src-container">
+
+<pre  class="fragment (appear)"><code trim><span style="color: #fcaf3e;">totalWeight</span> = 0
+<span style="color: #b4fa70;">for</span> package <span style="color: #b4fa70;">in</span> packages:
+  <span style="color: #fcaf3e;">totalWeight</span> += package[<span style="color: #e9b96e;">'weight'</span>]
+</code></pre>
+</div>
+
 </section>
 </section>
 <section>
-<section id="slide-org5f691a1">
-<h2 id="org5f691a1">Abstraction</h2>
+<section id="slide-org8138a2d">
+<h2 id="org8138a2d">Abstraction</h2>
 </section>
 </section>
 <section>
-<section id="slide-org06c98b1">
-<h2 id="org06c98b1">Conclusion</h2>
+<section id="slide-org1dc7b2b">
+<h2 id="org1dc7b2b">Conclusion</h2>
 </section>
 </section>
 </div>

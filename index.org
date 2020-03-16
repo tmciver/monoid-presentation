@@ -5,5 +5,27 @@
 
 * Outline
 * Examples
+
+** Total Weight
+Let's say I have a bunch of packages that need to be shipped.
+#+BEGIN_SRC python
+packages = [{'destination': '968 East Summit Court New Lenox, IL 60451',
+             'weight': 11},
+            {'destination': '75 South George Street Muskegon, MI 49441',
+             'weight': 5},
+            {'destination': '238 N. Holly Ave. Tampa, FL 33604',
+             'weight': 4}]
+#+END_SRC
+
+#+ATTR_REVEAL: :frag (appear)
+In order to ship I need to calculate their total weight.
+
+#+ATTR_REVEAL: :frag (appear)
+#+BEGIN_SRC python
+totalWeight = 0
+for package in packages:
+  totalWeight += package['weight']
+#+END_SRC
+
 * Abstraction
 * Conclusion
