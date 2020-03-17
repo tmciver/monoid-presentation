@@ -21,11 +21,14 @@ packages = [{'destination': '968 East Summit Court New Lenox, IL 60451',
 In order to ship I need to calculate their total weight.
 
 #+ATTR_REVEAL: :frag (appear)
-#+BEGIN_SRC python
+#+HEADER: :exports both
+#+BEGIN_SRC python :results pp
 totalWeight = 0
 for package in packages:
   totalWeight += package['weight']
+totalWeight
 #+END_SRC
+#+RESULTS:
 
 * Abstraction
 * Conclusion
