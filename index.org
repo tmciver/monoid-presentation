@@ -22,13 +22,42 @@ In order to ship I need to calculate their total weight.
 
 #+ATTR_REVEAL: :frag (appear)
 #+HEADER: :exports both
-#+BEGIN_SRC python :results pp
+#+BEGIN_SRC python :results value pp
 totalWeight = 0
 for package in packages:
   totalWeight += package['weight']
-totalWeight
 #+END_SRC
+
 #+RESULTS:
+
+** Let's Do It a Little More Functionally
+#+BEGIN_SRC python
+weights = [package['weight'] for package in packages]
+
+totalWeight = reduce(operator.add, weights, 0)
+#+END_SRC
+
+** Reducing/Folding
+[[file:img/Left-fold-transformation.png]]
+
+#+ATTR_REVEAL: :frag (appear)
+#+BEGIN_SRC python
+weights = [11, 5, 4] # 11 : 5 : 4 : []
+#+END_SRC
+#+ATTR_REVEAL: :frag (appear)
+#+BEGIN_SRC python
+totalWeight = add(add(add(0, 11), 5), 4)
+#+END_SRC
+#+ATTR_REVEAL: :frag (appear)
+#+BEGIN_SRC python
+totalWeight = add(add(add(0,
+                          11),
+                      5),
+                  4)
+#+END_SRC
+
+** Check for Packages over 10
+
 
 * Abstraction
 * Conclusion
