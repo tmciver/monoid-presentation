@@ -1,23 +1,27 @@
 #+TITLE: An Introduction to Monoids
-#+OPTIONS: toc:1, num:nil, timestamp:nil
+#+OPTIONS: toc:1, num:nil, timestamp:nil, \n:t
 #+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js@3.8.0
 #+REVEAL_THEME: moon
 
 * Outline
 * Examples
 
-** Total Weight
+** Example: Shipping Packages
 Let's say I have a bunch of packages that need to be shipped.
 #+BEGIN_SRC python
 packages = [{'destination': '968 East Summit Court New Lenox, IL 60451',
-             'weight': 11},
+             'description': 'Marbles\n'
+                  'weight': 13},
             {'destination': '75 South George Street Muskegon, MI 49441',
-             'weight': 5},
+             'description': 'Medical supplies\n'
+                  'weight': 5},
             {'destination': '238 N. Holly Ave. Tampa, FL 33604',
-             'weight': 4}]
+             'description': 'Frisbees\n'
+                  'weight': 4}]
 #+END_SRC
 
-#+ATTR_REVEAL: :frag (appear)
+** Total Weight
+
 In order to ship I need to calculate their total weight.
 
 #+ATTR_REVEAL: :frag (appear)
@@ -30,7 +34,9 @@ for package in packages:
 
 #+RESULTS:
 
-** Let's Do It a Little More Functionally
+#+ATTR_REVEAL: :frag (appear)
+But let's do it a little more functionally:
+#+ATTR_REVEAL: :frag (appear)
 #+BEGIN_SRC python
 weights = [package['weight'] for package in packages]
 
@@ -42,32 +48,39 @@ totalWeight = reduce(operator.add, weights, 0)
 
 #+ATTR_REVEAL: :frag (appear)
 #+BEGIN_SRC python
-weights = [11, 5, 4] # 11 : 5 : 4 : []
+weights = [13, 5, 4] # 13 : 5 : 4 : []
 #+END_SRC
 #+ATTR_REVEAL: :frag (appear)
+#+BEGIN_BLOCK
+If we could construct an array using functions,
+it might look like:
 #+BEGIN_SRC python
-totalWeight = add(add(add(0, 11), 5), 4)
+weights = cons(13, cons(5, cons(4, [])))
 #+END_SRC
+#+END_BLOCK
 #+ATTR_REVEAL: :frag (appear)
 #+BEGIN_SRC python
-totalWeight = add(add(add(0,
-                          11),
-                      5),
-                  4)
+totalWeight = add(add(add(0, 13), 5), 4)
 #+END_SRC
 
 ** Any Over 10?
-The shipping company charges extra if our shipment contains any package over 10.
+The shipping company charges extra if our shipment contains any package over 12.
 #+BEGIN_SRC python
-overTen = [weight > 10 for weight in weights]
-anyOverTen = reduce(operator.or, weights, False)
+overTwelve = [weight > 10 for weight in weights]
+         # = [True, False, False]
+anyOverTwelve = reduce(operator.or, overTwelve, False)
+            # = True
 #+END_SRC
 
 ** All Under 15?
-But they give a rebate if all packages are under 15 (just go with it).
+But they give a rebate if all packages are under 10
+
+(just go with it).
 #+BEGIN_SRC python
-underFifteen = [weight < 15 for weight in weights]
-allUnderFifteen = reduce(operator.and, underFifteen, True)
+underTen = [weight < 10 for weight in weights]
+       # = [False, True, True]
+allUnderTen = reduce(operator.and, underTen, True)
+          # = False
 #+END_SRC
 
 * Abstraction
