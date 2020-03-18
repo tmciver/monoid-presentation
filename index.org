@@ -87,5 +87,15 @@ allUnderTen = reduce(operator.and, underTen, True)
           # = False
 #+END_SRC
 
+** Construct a Manifest
+Let it just be the concatentation of all the package descriptions.
+#+BEGIN_SRC python
+descriptions = [package['description'] for package in packages]
+manifest = reduce(operator.add, descriptions, "")
+       # = 'Marbles
+       #    Medical Supplies
+       #    Frisbees'
+#+END_SRC
+
 * Abstraction
 * Conclusion
