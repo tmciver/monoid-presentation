@@ -32,28 +32,28 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#/slide-orga5a58ab">Outline</a></li>
-<li><a href="#/slide-orgcbf094d">Examples</a></li>
-<li><a href="#/slide-org8803f71">Abstraction</a></li>
-<li><a href="#/slide-orgac83979">Conclusion</a></li>
+<li><a href="#/slide-org8ea19ee">Outline</a></li>
+<li><a href="#/slide-org57f2990">Examples</a></li>
+<li><a href="#/slide-org33e4cc6">Abstraction</a></li>
+<li><a href="#/slide-org175da40">Conclusion</a></li>
 </ul>
 </div>
 </div>
 </section>
 
 <section>
-<section id="slide-orga5a58ab">
-<h2 id="orga5a58ab">Outline</h2>
+<section id="slide-org8ea19ee">
+<h2 id="org8ea19ee">Outline</h2>
 </section>
 </section>
 <section>
-<section id="slide-orgcbf094d">
-<h2 id="orgcbf094d">Examples</h2>
-<div class="outline-text-2" id="text-orgcbf094d">
+<section id="slide-org57f2990">
+<h2 id="org57f2990">Examples</h2>
+<div class="outline-text-2" id="text-org57f2990">
 </div>
 </section>
-<section id="slide-orgd44afc1">
-<h3 id="orgd44afc1">Total Weight</h3>
+<section id="slide-org189aca8">
+<h3 id="org189aca8">Total Weight</h3>
 <p>
 Let's say I have a bunch of packages that need to be shipped.
 </p>
@@ -81,8 +81,8 @@ In order to ship I need to calculate their total weight.
 </div>
 
 </section>
-<section id="slide-orgdfdf659">
-<h3 id="orgdfdf659">Let's Do It a Little More Functionally</h3>
+<section id="slide-orgde98550">
+<h3 id="orgde98550">Let's Do It a Little More Functionally</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><code trim><span style="color: #fcaf3e;">weights</span> = [package[<span style="color: #e9b96e;">'weight'</span>] <span style="color: #b4fa70;">for</span> package <span style="color: #b4fa70;">in</span> packages]
@@ -92,8 +92,8 @@ In order to ship I need to calculate their total weight.
 </div>
 
 </section>
-<section id="slide-orgaa53361">
-<h3 id="orgaa53361">Reducing/Folding</h3>
+<section id="slide-org1f6b88f">
+<h3 id="org1f6b88f">Reducing/Folding</h3>
 
 <div class="figure">
 <p><img src="img/Left-fold-transformation.png" alt="Left-fold-transformation.png" />
@@ -120,20 +120,41 @@ In order to ship I need to calculate their total weight.
 </div>
 
 </section>
-<section id="slide-orgb5954db">
-<h3 id="orgb5954db">Check for Packages over 10</h3>
+<section id="slide-org54d7c54">
+<h3 id="org54d7c54">Any Over 10?</h3>
+<p>
+The shipping company charges extra if our shipment contains any package over 10.
+</p>
+<div class="org-src-container">
 
+<pre  class="src src-python"><code trim><span style="color: #fcaf3e;">overTen</span> = [weight &gt; 10 <span style="color: #b4fa70;">for</span> weight <span style="color: #b4fa70;">in</span> weights]
+<span style="color: #fcaf3e;">anyOverTen</span> = <span style="color: #e090d7;">reduce</span>(operator.<span style="color: #b4fa70;">or</span>, weights, <span style="color: #e9b2e3;">False</span>)
+</code></pre>
+</div>
+
+</section>
+<section id="slide-orgd33a48d">
+<h3 id="orgd33a48d">All Under 15?</h3>
+<p>
+But they give a rebate if all packages are under 15 (just go with it).
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-python"><code trim><span style="color: #fcaf3e;">underFifteen</span> = [weight &lt; 15 <span style="color: #b4fa70;">for</span> weight <span style="color: #b4fa70;">in</span> weights]
+<span style="color: #fcaf3e;">allUnderFifteen</span> = <span style="color: #e090d7;">reduce</span>(operator.<span style="color: #b4fa70;">and</span>, underFifteen, <span style="color: #e9b2e3;">True</span>)
+</code></pre>
+</div>
 
 </section>
 </section>
 <section>
-<section id="slide-org8803f71">
-<h2 id="org8803f71">Abstraction</h2>
+<section id="slide-org33e4cc6">
+<h2 id="org33e4cc6">Abstraction</h2>
 </section>
 </section>
 <section>
-<section id="slide-orgac83979">
-<h2 id="orgac83979">Conclusion</h2>
+<section id="slide-org175da40">
+<h2 id="org175da40">Conclusion</h2>
 </section>
 </section>
 </div>

@@ -56,8 +56,19 @@ totalWeight = add(add(add(0,
                   4)
 #+END_SRC
 
-** Check for Packages over 10
+** Any Over 10?
+The shipping company charges extra if our shipment contains any package over 10.
+#+BEGIN_SRC python
+overTen = [weight > 10 for weight in weights]
+anyOverTen = reduce(operator.or, weights, False)
+#+END_SRC
 
+** All Under 15?
+But they give a rebate if all packages are under 15 (just go with it).
+#+BEGIN_SRC python
+underFifteen = [weight < 15 for weight in weights]
+allUnderFifteen = reduce(operator.and, underFifteen, True)
+#+END_SRC
 
 * Abstraction
 * Conclusion
