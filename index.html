@@ -32,28 +32,28 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#/slide-orgcfab257">Outline</a></li>
-<li><a href="#/slide-orgf65d8b3">Examples</a></li>
-<li><a href="#/slide-org53ac4db">Abstraction</a></li>
-<li><a href="#/slide-org2325be3">Conclusion</a></li>
+<li><a href="#/slide-org32b4db9">Outline</a></li>
+<li><a href="#/slide-orgbba4c7c">Examples</a></li>
+<li><a href="#/slide-org36381cf">Abstraction</a></li>
+<li><a href="#/slide-org616aecd">Conclusion</a></li>
 </ul>
 </div>
 </div>
 </section>
 
 <section>
-<section id="slide-orgcfab257">
-<h2 id="orgcfab257">Outline</h2>
+<section id="slide-org32b4db9">
+<h2 id="org32b4db9">Outline</h2>
 </section>
 </section>
 <section>
-<section id="slide-orgf65d8b3">
-<h2 id="orgf65d8b3">Examples</h2>
-<div class="outline-text-2" id="text-orgf65d8b3">
+<section id="slide-orgbba4c7c">
+<h2 id="orgbba4c7c">Examples</h2>
+<div class="outline-text-2" id="text-orgbba4c7c">
 </div>
 </section>
-<section id="slide-orge0cccad">
-<h3 id="orge0cccad">Example: Shipping Packages</h3>
+<section id="slide-org37939da">
+<h3 id="org37939da">Example: Shipping Packages</h3>
 <p>
 Let's say I have a bunch of packages that need to be shipped.<br />
 </p>
@@ -72,8 +72,8 @@ Let's say I have a bunch of packages that need to be shipped.<br />
 </div>
 
 </section>
-<section id="slide-org834d306">
-<h3 id="org834d306">Total Weight</h3>
+<section id="slide-org72903fd">
+<h3 id="org72903fd">Total Weight</h3>
 <p>
 In order to ship I need to calculate their total weight.<br />
 </p>
@@ -104,8 +104,8 @@ But let's do it a little more functionally:<br />
 </div>
 
 </section>
-<section id="slide-org6d9b136">
-<h3 id="org6d9b136">Reducing/Folding</h3>
+<section id="slide-orgcf9565d">
+<h3 id="orgcf9565d">Reducing/Folding</h3>
 
 <div class="figure">
 <p><img src="img/Left-fold-transformation.png" alt="Left-fold-transformation.png" /><br />
@@ -119,25 +119,19 @@ But let's do it a little more functionally:<br />
 </div>
 <div class="fragment (appear) BLOCK">
 <p>
-If we could construct an array using functions,<br />
-it might look like:<br />
+If we replace <code>f</code> in the diagram with <code>add</code> and <code>z</code> with <code>0</code>, we get:<br />
 </p>
 <div class="org-src-container">
 
-<pre  class="src src-python"><code trim><span style="color: #fcaf3e;">weights</span> = cons(13, cons(5, cons(4, [])))
+<pre  class="src src-python"><code trim><span style="color: #fcaf3e;">totalWeight</span> = add(add(add(0, 13), 5), 4)
 </code></pre>
 </div>
 
-</div>
-<div class="org-src-container">
-
-<pre  class="fragment (appear)"><code trim><span style="color: #fcaf3e;">totalWeight</span> = add(add(add(0, 13), 5), 4)
-</code></pre>
 </div>
 
 </section>
-<section id="slide-org790cba9">
-<h3 id="org790cba9">Any Over 10?</h3>
+<section id="slide-orgb1ef3f3">
+<h3 id="orgb1ef3f3">Any Over 10?</h3>
 <p>
 The shipping company charges extra if our shipment contains any package over 10.<br />
 </p>
@@ -151,8 +145,8 @@ The shipping company charges extra if our shipment contains any package over 10.
 </div>
 
 </section>
-<section id="slide-org5bab44f">
-<h3 id="org5bab44f">All Under 15?</h3>
+<section id="slide-org1d8cf42">
+<h3 id="org1d8cf42">All Under 15?</h3>
 <p>
 But they give a rebate if all packages are under 10<br />
 (just go with it).<br />
@@ -167,8 +161,8 @@ But they give a rebate if all packages are under 10<br />
 </div>
 
 </section>
-<section id="slide-org6c59243">
-<h3 id="org6c59243">Construct a Manifest</h3>
+<section id="slide-orgae84a9d">
+<h3 id="orgae84a9d">Construct a Manifest</h3>
 <p>
 Let it just be the concatentation of all the package descriptions.<br />
 </p>
@@ -185,13 +179,13 @@ Let it just be the concatentation of all the package descriptions.<br />
 </section>
 </section>
 <section>
-<section id="slide-org53ac4db">
-<h2 id="org53ac4db">Abstraction</h2>
+<section id="slide-org36381cf">
+<h2 id="org36381cf">Abstraction</h2>
 </section>
 </section>
 <section>
-<section id="slide-org2325be3">
-<h2 id="org2325be3">Conclusion</h2>
+<section id="slide-org616aecd">
+<h2 id="org616aecd">Conclusion</h2>
 </section>
 </section>
 </div>

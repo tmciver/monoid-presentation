@@ -57,16 +57,11 @@ weights = [13, 5, 4] # 13 : 5 : 4 : []
 #+END_SRC
 #+ATTR_REVEAL: :frag (appear)
 #+BEGIN_BLOCK
-If we could construct an array using functions,
-it might look like:
-#+BEGIN_SRC python
-weights = cons(13, cons(5, cons(4, [])))
-#+END_SRC
-#+END_BLOCK
-#+ATTR_REVEAL: :frag (appear)
+If we replace ~f~ in the diagram with ~add~ and ~z~ with ~0~, we get:
 #+BEGIN_SRC python
 totalWeight = add(add(add(0, 13), 5), 4)
 #+END_SRC
+#+END_BLOCK
 
 ** Any Over 10?
 The shipping company charges extra if our shipment contains any package over 10.
