@@ -42,6 +42,11 @@ weights = [package['weight'] for package in packages]
 
 totalWeight = reduce(operator.add, weights, 0)
 #+END_SRC
+#+ATTR_REVEAL: :frag (appear)
+#+BEGIN_SRC python
+# Haskell type signature
+# reduce :: (b -> a -> b) -> [a] -> b -> b
+#+END_SRC
 
 ** Reducing/Folding
 [[file:img/Left-fold-transformation.png]]
@@ -64,7 +69,7 @@ totalWeight = add(add(add(0, 13), 5), 4)
 #+END_SRC
 
 ** Any Over 10?
-The shipping company charges extra if our shipment contains any package over 12.
+The shipping company charges extra if our shipment contains any package over 10.
 #+BEGIN_SRC python
 overTwelve = [weight > 10 for weight in weights]
          # = [True, False, False]
@@ -74,7 +79,6 @@ anyOverTwelve = reduce(operator.or, overTwelve, False)
 
 ** All Under 15?
 But they give a rebate if all packages are under 10
-
 (just go with it).
 #+BEGIN_SRC python
 underTen = [weight < 10 for weight in weights]
