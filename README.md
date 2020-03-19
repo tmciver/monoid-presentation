@@ -1,4 +1,4 @@
-# Presentation on An Introduction to Functional Programming
+# Presentation on Monoids
 
 A [RevealJS](http://lab.hakim.se/reveal-js/#/) presentation created using Emacs'
 [Org-mode](http://orgmode.org/).  The presentation can be viewed
