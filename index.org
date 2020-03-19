@@ -171,3 +171,9 @@ a <> ε == a
 And many more!
 
 * Conclusion
+
+* References
+- [[http://learnyouahaskell.com/functors-applicative-functors-and-monoids#monoids][Monoids in /Learn You A Haskell/]]
+- [[https://www.youtube.com/watch?v=BovTQeDK7XI][Tsoding's Youtube video on Monoids]]
+- [[https://en.wikibooks.org/wiki/Haskell/Monoids][Monoids in Haskell's Wikibook]]
+- [[https://en.wikipedia.org/wiki/Monoid][Wikipedia article on Monoids]]
