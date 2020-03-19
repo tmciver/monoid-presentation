@@ -139,4 +139,23 @@ If the combining function is denoted by ~<>~, then associativity requires:
 #+END_SRC
 #+END_BLOCK
 
+** Monoids
+A [[https://en.wikipedia.org/wiki/Monoid][~Monoid~]] is a ~Semigroup~ that has a
+/distinguished element/.
+#+ATTR_REVEAL: :frag (appear)
+This element is also referred to as an /identity/ element or /unit/.
+#+ATTR_REVEAL: :frag (appear)
+In our examples the initial value is actually the identity element for each case.
+
+** Monoid Instances
+| Type    | Operation     | Identity |
+|---------+---------------+----------|
+| Int     | Plus          | 0        |
+| Int     | Multiply      | 1        |
+| String  | Concatenation | ""       |
+| List    | Concatenation | []       |
+| Boolean | And           | True     |
+| Boolean | Or            | False    |
+And many more!
+
 * Conclusion
