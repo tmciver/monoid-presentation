@@ -2,6 +2,7 @@
 #+OPTIONS: toc:1, num:nil, timestamp:nil, \n:t
 #+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js@3.8.0
 #+REVEAL_THEME: moon
+#+REVEAL_EXTRA_CSS: ./css/monoid.css
 
 * Outline
 * Examples
@@ -91,6 +92,17 @@ manifest = reduce(operator.add, descriptions, "")
        #    Medical Supplies
        #    Frisbees'
 #+END_SRC
+
+* See a Pattern?
+
+** Let's Summarize Those Examples
+
+| Objective           | Code                                    |
+|---------------------+-----------------------------------------|
+| Sum Integers        | reduce(operator.add, listOfInts, 0)     |
+| Check if any True   | reduce(operator.or, listOfBools, False) |
+| Check if all True   | reduce(operator.and, listOfBools, True) |
+| Concatenate Strings | reduce(operator.add, listOfStrings, "") |
 
 * Abstraction
 * Conclusion

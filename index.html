@@ -11,6 +11,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/css/theme/moon.css" id="theme"/>
 
+<link rel="stylesheet" href="./css/monoid.css"/>
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -32,28 +33,29 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#/slide-org32b4db9">Outline</a></li>
-<li><a href="#/slide-orgbba4c7c">Examples</a></li>
-<li><a href="#/slide-org36381cf">Abstraction</a></li>
-<li><a href="#/slide-org616aecd">Conclusion</a></li>
+<li><a href="#/slide-orgfdd7bcc">Outline</a></li>
+<li><a href="#/slide-org1c3ca9c">Examples</a></li>
+<li><a href="#/slide-orgac613c0">See a Pattern?</a></li>
+<li><a href="#/slide-org5a0b52c">Abstraction</a></li>
+<li><a href="#/slide-org5c1c294">Conclusion</a></li>
 </ul>
 </div>
 </div>
 </section>
 
 <section>
-<section id="slide-org32b4db9">
-<h2 id="org32b4db9">Outline</h2>
+<section id="slide-orgfdd7bcc">
+<h2 id="orgfdd7bcc">Outline</h2>
 </section>
 </section>
 <section>
-<section id="slide-orgbba4c7c">
-<h2 id="orgbba4c7c">Examples</h2>
-<div class="outline-text-2" id="text-orgbba4c7c">
+<section id="slide-org1c3ca9c">
+<h2 id="org1c3ca9c">Examples</h2>
+<div class="outline-text-2" id="text-org1c3ca9c">
 </div>
 </section>
-<section id="slide-org37939da">
-<h3 id="org37939da">Example: Shipping Packages</h3>
+<section id="slide-orge8fd51e">
+<h3 id="orge8fd51e">Example: Shipping Packages</h3>
 <p>
 Let's say I have a bunch of packages that need to be shipped.<br />
 </p>
@@ -72,8 +74,8 @@ Let's say I have a bunch of packages that need to be shipped.<br />
 </div>
 
 </section>
-<section id="slide-org72903fd">
-<h3 id="org72903fd">Total Weight</h3>
+<section id="slide-orgbe5e93d">
+<h3 id="orgbe5e93d">Total Weight</h3>
 <p>
 In order to ship I need to calculate their total weight.<br />
 </p>
@@ -104,8 +106,8 @@ But let's do it a little more functionally:<br />
 </div>
 
 </section>
-<section id="slide-orgcf9565d">
-<h3 id="orgcf9565d">Reducing/Folding</h3>
+<section id="slide-orgbdc4143">
+<h3 id="orgbdc4143">Reducing/Folding</h3>
 
 <div class="figure">
 <p><img src="img/Left-fold-transformation.png" alt="Left-fold-transformation.png" /><br />
@@ -130,8 +132,8 @@ If we replace <code>f</code> in the diagram with <code>add</code> and <code>z</c
 </div>
 
 </section>
-<section id="slide-orgb1ef3f3">
-<h3 id="orgb1ef3f3">Any Over 10?</h3>
+<section id="slide-org752611a">
+<h3 id="org752611a">Any Over 10?</h3>
 <p>
 The shipping company charges extra if our shipment contains any package over 10.<br />
 </p>
@@ -145,8 +147,8 @@ The shipping company charges extra if our shipment contains any package over 10.
 </div>
 
 </section>
-<section id="slide-org1d8cf42">
-<h3 id="org1d8cf42">All Under 15?</h3>
+<section id="slide-org9aa8465">
+<h3 id="org9aa8465">All Under 15?</h3>
 <p>
 But they give a rebate if all packages are under 10<br />
 (just go with it).<br />
@@ -161,8 +163,8 @@ But they give a rebate if all packages are under 10<br />
 </div>
 
 </section>
-<section id="slide-orgae84a9d">
-<h3 id="orgae84a9d">Construct a Manifest</h3>
+<section id="slide-orga64ea81">
+<h3 id="orga64ea81">Construct a Manifest</h3>
 <p>
 Let it just be the concatentation of all the package descriptions.<br />
 </p>
@@ -179,13 +181,60 @@ Let it just be the concatentation of all the package descriptions.<br />
 </section>
 </section>
 <section>
-<section id="slide-org36381cf">
-<h2 id="org36381cf">Abstraction</h2>
+<section id="slide-orgac613c0">
+<h2 id="orgac613c0">See a Pattern?</h2>
+<div class="outline-text-2" id="text-orgac613c0">
+</div>
+</section>
+<section id="slide-org45668ed">
+<h3 id="org45668ed">Let's Summarize Those Examples</h3>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Objective</th>
+<th scope="col" class="org-left">Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Sum Integers</td>
+<td class="org-left">reduce(operator.add, listOfInts, 0)</td>
+</tr>
+
+<tr>
+<td class="org-left">Check if any True</td>
+<td class="org-left">reduce(operator.or, listOfBools, False)</td>
+</tr>
+
+<tr>
+<td class="org-left">Check if all True</td>
+<td class="org-left">reduce(operator.and, listOfBools, True)</td>
+</tr>
+
+<tr>
+<td class="org-left">Concatenate Strings</td>
+<td class="org-left">reduce(operator.add, listOfStrings, "")</td>
+</tr>
+</tbody>
+</table>
+
 </section>
 </section>
 <section>
-<section id="slide-org616aecd">
-<h2 id="org616aecd">Conclusion</h2>
+<section id="slide-org5a0b52c">
+<h2 id="org5a0b52c">Abstraction</h2>
+</section>
+</section>
+<section>
+<section id="slide-org5c1c294">
+<h2 id="org5c1c294">Conclusion</h2>
 </section>
 </section>
 </div>
