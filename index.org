@@ -147,6 +147,18 @@ This element is also referred to as an /identity/ element or /unit/.
 #+ATTR_REVEAL: :frag (appear)
 In our examples the initial value is actually the identity element for each case.
 
+** Monoids (continued)
+This identity element is special because when combined with another value of the same type, it has /no effect/.
+This is the /identity/ law.
+#+ATTR_REVEAL: :frag (appear)
+#+BEGIN_BLOCK
+If the identity element is denoted by ~ε~, then the identity law is:
+#+BEGIN_SRC haskell
+a <> ε == a
+ε <> a == a
+#+END_SRC
+#+END_BLOCK
+
 ** Monoid Instances
 | Type    | Operation     | Identity |
 |---------+---------------+----------|
