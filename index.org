@@ -170,6 +170,68 @@ a <> ε == a
 | Boolean | Or            | False    |
 And many more!
 
+** Demo
+
+** Functions Are Monoids Too!
+#+ATTR_REVEAL: :frag (appear)
+#+BEGIN_BLOCK
+Say we want to filter all digits and punctuation from a string.  We might do:
+#+BEGIN_SRC haskell
+cleanString :: String -> String
+cleanString s = filter (\a -> not (isDigit a || isPunctuation a)) s
+#+END_SRC
+#+END_BLOCK
+#+ATTR_REVEAL: :frag (appear)
+But we're functional programmers and we can do better!
+
+** What About Folding Them?
+#+ATTR_REVEAL: :frag (appear)
+#+BEGIN_SRC haskell
+filterFun :: Char -> Bool
+filterFun c = not ((fold [isDigit, isPunctuation]) c)
+#+END_SRC
+#+ATTR_REVEAL: :frag (appear)
+#+BEGIN_BLOCK 
+But that doesn't compile:
+#+BEGIN_SRC haskell
+• No instance for (Monoid Bool) arising from a use of ‘fold’
+• In the expression: fold filters
+  In an equation for ‘it’: it = fold filters
+#+END_SRC
+#+END_BLOCK
+
+** Bool Isn't a Monoid
+#+ATTR_REVEAL: :frag (appear)
+#+BEGIN_BLOCK 
+There are at least two valid Monoids for Bool so Haskell does not define them.  Instead we must use the ~Any~ wrapper:
+#+BEGIN_SRC haskell
+filterFun :: Char -> Bool
+filterFun c = not ((fold [Any . isDigit, Any . isPunctuation]) c)
+#+END_SRC
+#+END_BLOCK
+
+** 
+Oops, that doesn't compile either. We need to unwrap the ~Any~:
+#+BEGIN_SRC haskell
+filterFun :: Char -> Bool
+filterFun c = not ((getAny . fold [Any . isDigit, Any . isPunctuation]) c)
+#+END_SRC
+
+** 
+Now the ~cleanString~ function looks like:
+#+BEGIN_SRC haskell
+cleanString :: String -> String
+cleanString s = filter (\c -> not ((getAny . fold filters) c)) s
+  where filters = [Any . not . isDigit, Any . not . isPunctuation]
+#+END_SRC
+
+** Final Refactored Version
+#+BEGIN_SRC haskell
+cleanString :: String -> String
+cleanString = filter (not . getAny . foldMap (Any .) filters)
+  where filters = [isDigit, isPunctuation]
+#+END_SRC
+
 * Conclusion
 
 * References
