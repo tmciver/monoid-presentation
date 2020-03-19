@@ -119,5 +119,8 @@ manifest = reduce(operator.add, descriptions, "")
         reduce :: (a -> a -> a) -> [a] -> a -> a
         #+END_SRC
 
+** A New Perspective
+This specialized type has a new interpretation.  The former /reducing/ function can be thought of as a /combining/ function: it combines two values of the same type.
+
 * Abstraction
 * Conclusion

@@ -33,29 +33,29 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#/slide-org1659d1d">Outline</a></li>
-<li><a href="#/slide-orgbdacc56">Examples</a></li>
-<li><a href="#/slide-org6f7b4c5">A Pattern</a></li>
-<li><a href="#/slide-org27dc727">Abstraction</a></li>
-<li><a href="#/slide-org1bc046a">Conclusion</a></li>
+<li><a href="#/slide-org668baa7">Outline</a></li>
+<li><a href="#/slide-org276fc40">Examples</a></li>
+<li><a href="#/slide-org95f2e90">A Pattern</a></li>
+<li><a href="#/slide-org20375a7">Abstraction</a></li>
+<li><a href="#/slide-org11d0a34">Conclusion</a></li>
 </ul>
 </div>
 </div>
 </section>
 
 <section>
-<section id="slide-org1659d1d">
-<h2 id="org1659d1d">Outline</h2>
+<section id="slide-org668baa7">
+<h2 id="org668baa7">Outline</h2>
 </section>
 </section>
 <section>
-<section id="slide-orgbdacc56">
-<h2 id="orgbdacc56">Examples</h2>
-<div class="outline-text-2" id="text-orgbdacc56">
+<section id="slide-org276fc40">
+<h2 id="org276fc40">Examples</h2>
+<div class="outline-text-2" id="text-org276fc40">
 </div>
 </section>
-<section id="slide-org927e7bf">
-<h3 id="org927e7bf">Example: Shipping Packages</h3>
+<section id="slide-orgef0f5de">
+<h3 id="orgef0f5de">Example: Shipping Packages</h3>
 <p>
 Let's say I have a bunch of packages that need to be shipped.<br />
 </p>
@@ -74,8 +74,8 @@ Let's say I have a bunch of packages that need to be shipped.<br />
 </div>
 
 </section>
-<section id="slide-org758f113">
-<h3 id="org758f113">Total Weight</h3>
+<section id="slide-org57f87d2">
+<h3 id="org57f87d2">Total Weight</h3>
 <p>
 In order to ship I need to calculate their total weight.<br />
 </p>
@@ -106,8 +106,8 @@ But let's do it a little more functionally:<br />
 </div>
 
 </section>
-<section id="slide-org3da8a92">
-<h3 id="org3da8a92">Reducing/Folding</h3>
+<section id="slide-orga36ad87">
+<h3 id="orga36ad87">Reducing/Folding</h3>
 
 <div class="figure">
 <p><img src="img/Left-fold-transformation.png" alt="Left-fold-transformation.png" /><br />
@@ -132,8 +132,8 @@ If we replace <code>f</code> in the diagram with <code>add</code> and <code>z</c
 </div>
 
 </section>
-<section id="slide-orgdc6680c">
-<h3 id="orgdc6680c">Any Over 10?</h3>
+<section id="slide-orgf00f9e7">
+<h3 id="orgf00f9e7">Any Over 10?</h3>
 <p>
 The shipping company charges extra if our shipment contains any package over 10.<br />
 </p>
@@ -147,8 +147,8 @@ The shipping company charges extra if our shipment contains any package over 10.
 </div>
 
 </section>
-<section id="slide-org1666f8c">
-<h3 id="org1666f8c">All Under 15?</h3>
+<section id="slide-org102c821">
+<h3 id="org102c821">All Under 15?</h3>
 <p>
 But they give a rebate if all packages are under 10<br />
 (just go with it).<br />
@@ -163,8 +163,8 @@ But they give a rebate if all packages are under 10<br />
 </div>
 
 </section>
-<section id="slide-orgb00394a">
-<h3 id="orgb00394a">Construct a Manifest</h3>
+<section id="slide-org02632f9">
+<h3 id="org02632f9">Construct a Manifest</h3>
 <p>
 Let it just be the concatentation of all the package descriptions.<br />
 </p>
@@ -181,13 +181,13 @@ Let it just be the concatentation of all the package descriptions.<br />
 </section>
 </section>
 <section>
-<section id="slide-org6f7b4c5">
-<h2 id="org6f7b4c5">A Pattern</h2>
-<div class="outline-text-2" id="text-org6f7b4c5">
+<section id="slide-org95f2e90">
+<h2 id="org95f2e90">A Pattern</h2>
+<div class="outline-text-2" id="text-org95f2e90">
 </div>
 </section>
-<section id="slide-orgb961d07">
-<h3 id="orgb961d07">Let's Summarize Those Examples</h3>
+<section id="slide-org1a7b4e4">
+<h3 id="org1a7b4e4">Let's Summarize Those Examples</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -226,8 +226,8 @@ Let it just be the concatentation of all the package descriptions.<br />
 </table>
 
 </section>
-<section id="slide-orgd7a7453">
-<h3 id="orgd7a7453">Two Things to Notice</h3>
+<section id="slide-org72c7a4c">
+<h3 id="org72c7a4c">Two Things to Notice</h3>
 <ol>
 <li class="fragment appear">They differ only in the operator being used and the initial value.<br /></li>
 <li class="fragment appear"><p>
@@ -253,15 +253,23 @@ to this:<br />
 </ol>
 
 </section>
+<section id="slide-org74da8ca">
+<h3 id="org74da8ca">A New Perspective</h3>
+<p>
+This specialized type has a new interpretation.  The former <i>reducing</i> function can be thought of as a <i>combining</i> function: it combines two values of the same type.<br />
+</p>
+
+
+</section>
 </section>
 <section>
-<section id="slide-org27dc727">
-<h2 id="org27dc727">Abstraction</h2>
+<section id="slide-org20375a7">
+<h2 id="org20375a7">Abstraction</h2>
 </section>
 </section>
 <section>
-<section id="slide-org1bc046a">
-<h2 id="org1bc046a">Conclusion</h2>
+<section id="slide-org11d0a34">
+<h2 id="org11d0a34">Conclusion</h2>
 </section>
 </section>
 </div>
