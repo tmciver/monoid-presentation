@@ -231,7 +231,7 @@ cleanString = filter (not . getAny . foldMap (Any .) filters)
   where filters = [isDigit, isPunctuation]
 #+END_SRC
 
-* Conclusion
+* Questions?
 
 * References
 - [[http://learnyouahaskell.com/functors-applicative-functors-and-monoids#monoids][Monoids in /Learn You A Haskell/]]
