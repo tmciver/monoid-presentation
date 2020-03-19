@@ -123,4 +123,20 @@ manifest = reduce(operator.add, descriptions, "")
 This specialized type has a new interpretation.  The former /reducing/ function can be thought of as a /combining/ function: it combines two values of the same type.
 
 * Abstraction
+
+** Semigroups
+
+Data types that have such a binary operator are known as [[https://en.wikipedia.org/wiki/Semigroup][~Semigroups~]].
+
+** But There's Just One More Thing
+#+ATTR_REVEAL: :frag (appear)
+To be a valid ~Semigroup~ you can't have just any old combining function; it must be /associative/.
+#+ATTR_REVEAL: :frag (appear)
+#+BEGIN_BLOCK
+If the combining function is denoted by ~<>~, then associativity requires:
+#+BEGIN_SRC haskell
+(a <> b) <> c == a <> (b <> c)
+#+END_SRC
+#+END_BLOCK
+
 * Conclusion
