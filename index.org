@@ -109,11 +109,15 @@ manifest = reduce(operator.add, descriptions, "")
 1. They differ only in the operator being used and the initial value.
 2. The type of the initial value is the same as the list elements.  Therefore the type of ~reduce~ is /specialized/ from this:
 
+        #+BEGIN_SRC haskell
         reduce :: (b -> a -> b) -> [a] -> b -> b
+        #+END_SRC
 
     to this:
 
+        #+BEGIN_SRC haskell
         reduce :: (a -> a -> a) -> [a] -> a -> a
+        #+END_SRC
 
 * Abstraction
 * Conclusion
