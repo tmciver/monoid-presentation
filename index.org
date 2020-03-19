@@ -4,7 +4,6 @@
 #+REVEAL_THEME: moon
 #+REVEAL_EXTRA_CSS: ./css/monoid.css
 
-* Outline
 * Examples
 
 ** Example: Shipping Packages
@@ -122,7 +121,7 @@ manifest = reduce(operator.add, descriptions, "")
 ** A New Perspective
 This specialized type has a new interpretation.  The former /reducing/ function can be thought of as a /combining/ function: it combines two values of the same type.
 
-* Abstraction
+* An Abstraction
 
 ** Semigroups
 

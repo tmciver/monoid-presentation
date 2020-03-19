@@ -33,30 +33,24 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#/slide-orga7369a6">Outline</a></li>
-<li><a href="#/slide-org4143904">Examples</a></li>
-<li><a href="#/slide-orgbb878a3">A Pattern</a></li>
-<li><a href="#/slide-org5a97700">Abstraction</a></li>
-<li><a href="#/slide-org9c1f122">Conclusion</a></li>
-<li><a href="#/slide-orgadb5e0a">References</a></li>
+<li><a href="#/slide-orgb67e520">Examples</a></li>
+<li><a href="#/slide-orgf196cb0">A Pattern</a></li>
+<li><a href="#/slide-org599c43a">An Abstraction</a></li>
+<li><a href="#/slide-org1d8bf85">Conclusion</a></li>
+<li><a href="#/slide-org337130d">References</a></li>
 </ul>
 </div>
 </div>
 </section>
 
 <section>
-<section id="slide-orga7369a6">
-<h2 id="orga7369a6">Outline</h2>
-</section>
-</section>
-<section>
-<section id="slide-org4143904">
-<h2 id="org4143904">Examples</h2>
-<div class="outline-text-2" id="text-org4143904">
+<section id="slide-orgb67e520">
+<h2 id="orgb67e520">Examples</h2>
+<div class="outline-text-2" id="text-orgb67e520">
 </div>
 </section>
-<section id="slide-org5abf4bb">
-<h3 id="org5abf4bb">Example: Shipping Packages</h3>
+<section id="slide-org9108934">
+<h3 id="org9108934">Example: Shipping Packages</h3>
 <p>
 Let's say I have a bunch of packages that need to be shipped.<br />
 </p>
@@ -75,8 +69,8 @@ Let's say I have a bunch of packages that need to be shipped.<br />
 </div>
 
 </section>
-<section id="slide-org776cf2b">
-<h3 id="org776cf2b">Total Weight</h3>
+<section id="slide-org00b2cfd">
+<h3 id="org00b2cfd">Total Weight</h3>
 <p>
 In order to ship I need to calculate their total weight.<br />
 </p>
@@ -107,8 +101,8 @@ But let's do it a little more functionally:<br />
 </div>
 
 </section>
-<section id="slide-org7e1cdc6">
-<h3 id="org7e1cdc6">Reducing/Folding</h3>
+<section id="slide-orgc1e456b">
+<h3 id="orgc1e456b">Reducing/Folding</h3>
 
 <div class="figure">
 <p><img src="img/Left-fold-transformation.png" alt="Left-fold-transformation.png" /><br />
@@ -133,8 +127,8 @@ If we replace <code>f</code> in the diagram with <code>add</code> and <code>z</c
 </div>
 
 </section>
-<section id="slide-orge68f256">
-<h3 id="orge68f256">Any Over 10?</h3>
+<section id="slide-org21f9d2d">
+<h3 id="org21f9d2d">Any Over 10?</h3>
 <p>
 The shipping company charges extra if our shipment contains any package over 10.<br />
 </p>
@@ -148,8 +142,8 @@ The shipping company charges extra if our shipment contains any package over 10.
 </div>
 
 </section>
-<section id="slide-org49bc0a8">
-<h3 id="org49bc0a8">All Under 15?</h3>
+<section id="slide-org145e0e5">
+<h3 id="org145e0e5">All Under 15?</h3>
 <p>
 But they give a rebate if all packages are under 10<br />
 (just go with it).<br />
@@ -164,8 +158,8 @@ But they give a rebate if all packages are under 10<br />
 </div>
 
 </section>
-<section id="slide-org6dd4904">
-<h3 id="org6dd4904">Construct a Manifest</h3>
+<section id="slide-org238fe4a">
+<h3 id="org238fe4a">Construct a Manifest</h3>
 <p>
 Let it just be the concatentation of all the package descriptions.<br />
 </p>
@@ -182,13 +176,13 @@ Let it just be the concatentation of all the package descriptions.<br />
 </section>
 </section>
 <section>
-<section id="slide-orgbb878a3">
-<h2 id="orgbb878a3">A Pattern</h2>
-<div class="outline-text-2" id="text-orgbb878a3">
+<section id="slide-orgf196cb0">
+<h2 id="orgf196cb0">A Pattern</h2>
+<div class="outline-text-2" id="text-orgf196cb0">
 </div>
 </section>
-<section id="slide-orgb9eb634">
-<h3 id="orgb9eb634">Let's Summarize Those Examples</h3>
+<section id="slide-orgef616a9">
+<h3 id="orgef616a9">Let's Summarize Those Examples</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -227,8 +221,8 @@ Let it just be the concatentation of all the package descriptions.<br />
 </table>
 
 </section>
-<section id="slide-org974bcd9">
-<h3 id="org974bcd9">Two Things to Notice</h3>
+<section id="slide-orgd56d3e4">
+<h3 id="orgd56d3e4">Two Things to Notice</h3>
 <ol>
 <li class="fragment appear">They differ only in the operator being used and the initial value.<br /></li>
 <li class="fragment appear"><p>
@@ -254,8 +248,8 @@ to this:<br />
 </ol>
 
 </section>
-<section id="slide-org4eae897">
-<h3 id="org4eae897">A New Perspective</h3>
+<section id="slide-org6459102">
+<h3 id="org6459102">A New Perspective</h3>
 <p>
 This specialized type has a new interpretation.  The former <i>reducing</i> function can be thought of as a <i>combining</i> function: it combines two values of the same type.<br />
 </p>
@@ -263,20 +257,20 @@ This specialized type has a new interpretation.  The former <i>reducing</i> func
 </section>
 </section>
 <section>
-<section id="slide-org5a97700">
-<h2 id="org5a97700">Abstraction</h2>
-<div class="outline-text-2" id="text-org5a97700">
+<section id="slide-org599c43a">
+<h2 id="org599c43a">An Abstraction</h2>
+<div class="outline-text-2" id="text-org599c43a">
 </div>
 </section>
-<section id="slide-org5e279d9">
-<h3 id="org5e279d9">Semigroups</h3>
+<section id="slide-org5ff0f21">
+<h3 id="org5ff0f21">Semigroups</h3>
 <p>
 Data types that have such a binary operator are known as <a href="https://en.wikipedia.org/wiki/Semigroup"><code>Semigroups</code></a>.<br />
 </p>
 
 </section>
-<section id="slide-orgab541ba">
-<h3 id="orgab541ba">But There's Just One More Thing</h3>
+<section id="slide-org58f57e3">
+<h3 id="org58f57e3">But There's Just One More Thing</h3>
 <p class="fragment (appear)">
 To be a valid <code>Semigroup</code> you can't have just any old combining function; it must be <i>associative</i>.<br />
 </p>
@@ -293,8 +287,8 @@ If the combining function is denoted by <code>&lt;&gt;</code>, then associativit
 </div>
 
 </section>
-<section id="slide-orgc4d588c">
-<h3 id="orgc4d588c">Monoids</h3>
+<section id="slide-org740f67c">
+<h3 id="org740f67c">Monoids</h3>
 <p>
 A <a href="https://en.wikipedia.org/wiki/Monoid"><code>Monoid</code></a> is a <code>Semigroup</code> that has a<br />
 <i>distinguished element</i>.<br />
@@ -307,8 +301,8 @@ In our examples the initial value is actually the identity element for each case
 </p>
 
 </section>
-<section id="slide-orgc63b205">
-<h3 id="orgc63b205">Monoids (continued)</h3>
+<section id="slide-org06d8696">
+<h3 id="org06d8696">Monoids (continued)</h3>
 <p>
 This identity element is special because when combined with another value of the same type, it has <i>no effect</i>.<br />
 This is the <i>identity</i> law.<br />
@@ -327,8 +321,8 @@ If the identity element is denoted by <code>ε</code>, then the identity law is:
 </div>
 
 </section>
-<section id="slide-orgea75a83">
-<h3 id="orgea75a83">Monoid Instances</h3>
+<section id="slide-orgbd9bc84">
+<h3 id="orgbd9bc84">Monoid Instances</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -389,12 +383,12 @@ And many more!<br />
 </p>
 
 </section>
-<section id="slide-orgf1ae2d9">
-<h3 id="orgf1ae2d9">Demo</h3>
+<section id="slide-orgaf98f96">
+<h3 id="orgaf98f96">Demo</h3>
 
 </section>
-<section id="slide-org2818cfa">
-<h3 id="org2818cfa">Functions Are Monoids Too!</h3>
+<section id="slide-org1ea176b">
+<h3 id="org1ea176b">Functions Are Monoids Too!</h3>
 <div class="fragment (appear) BLOCK">
 <p>
 Say we want to filter all digits and punctuation from a string.  We might do:<br />
@@ -412,8 +406,8 @@ But we're functional programmers and we can do better!<br />
 </p>
 
 </section>
-<section id="slide-orgea16588">
-<h3 id="orgea16588">What About Folding Them?</h3>
+<section id="slide-orgea72bbc">
+<h3 id="orgea72bbc">What About Folding Them?</h3>
 <div class="org-src-container">
 
 <pre  class="fragment (appear)"><code trim><span style="color: #fce94f;">filterFun</span> <span style="color: #fcaf3e;">::</span> <span style="color: #8cc4ff;">Char</span> <span style="color: #fcaf3e;">-&gt;</span> <span style="color: #8cc4ff;">Bool</span>
@@ -435,8 +429,8 @@ But that doesn't compile:<br />
 </div>
 
 </section>
-<section id="slide-org79f7f21">
-<h3 id="org79f7f21">Bool Isn't a Monoid</h3>
+<section id="slide-org7975429">
+<h3 id="org7975429">Bool Isn't a Monoid</h3>
 <div class="fragment (appear) BLOCK">
 <p>
 There are at least two valid Monoids for Bool so Haskell does not define them.  Instead we must use the <code>Any</code> wrapper:<br />
@@ -451,8 +445,8 @@ There are at least two valid Monoids for Bool so Haskell does not define them.  
 </div>
 
 </section>
-<section id="slide-org263f9c1">
-<h3 id="org263f9c1"></h3>
+<section id="slide-org941b1f8">
+<h3 id="org941b1f8"></h3>
 <p>
 Oops, that doesn't compile either. We need to unwrap the <code>Any</code>:<br />
 </p>
@@ -464,8 +458,8 @@ Oops, that doesn't compile either. We need to unwrap the <code>Any</code>:<br />
 </div>
 
 </section>
-<section id="slide-org04b64a3">
-<h3 id="org04b64a3"></h3>
+<section id="slide-orgfab56ce">
+<h3 id="orgfab56ce"></h3>
 <p>
 Now the <code>cleanString</code> function looks like:<br />
 </p>
@@ -478,8 +472,8 @@ Now the <code>cleanString</code> function looks like:<br />
 </div>
 
 </section>
-<section id="slide-org04194fa">
-<h3 id="org04194fa">Final Refactored Version</h3>
+<section id="slide-orgae4e212">
+<h3 id="orgae4e212">Final Refactored Version</h3>
 <div class="org-src-container">
 
 <pre  class="src src-haskell"><code trim><span style="color: #fce94f;">cleanString</span> <span style="color: #fcaf3e;">::</span> <span style="color: #8cc4ff;">String</span> <span style="color: #fcaf3e;">-&gt;</span> <span style="color: #8cc4ff;">String</span>
@@ -491,14 +485,14 @@ Now the <code>cleanString</code> function looks like:<br />
 </section>
 </section>
 <section>
-<section id="slide-org9c1f122">
-<h2 id="org9c1f122">Conclusion</h2>
+<section id="slide-org1d8bf85">
+<h2 id="org1d8bf85">Conclusion</h2>
 
 </section>
 </section>
 <section>
-<section id="slide-orgadb5e0a">
-<h2 id="orgadb5e0a">References</h2>
+<section id="slide-org337130d">
+<h2 id="org337130d">References</h2>
 <ul>
 <li><a href="http://learnyouahaskell.com/functors-applicative-functors-and-monoids#monoids">Monoids in <i>Learn You A Haskell</i></a><br /></li>
 <li><a href="https://www.youtube.com/watch?v=BovTQeDK7XI">Tsoding's Youtube video on Monoids</a><br /></li>
