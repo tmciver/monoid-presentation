@@ -221,7 +221,7 @@ Now the ~cleanString~ function looks like:
 #+BEGIN_SRC haskell
 cleanString :: String -> String
 cleanString s = filter (\c -> not ((getAny . fold filters) c)) s
-  where filters = [Any . not . isDigit, Any . not . isPunctuation]
+  where filters = [Any . isDigit, Any . isPunctuation]
 #+END_SRC
 
 ** Final Refactored Version
